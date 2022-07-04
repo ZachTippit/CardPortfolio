@@ -7,6 +7,7 @@ import compassAnimation from "./Lotties/compass.json";
 import birdAnimation from './Lotties/bird.json'
 import bottleAnimation from './Lotties/bottle.json'
 import potionAnimation from './Lotties/potion.json'
+import {default as Pic} from './blueeyes.jpg'
 import './App.css';
 
 function App() {
@@ -14,15 +15,18 @@ function App() {
   const cards = [
     {
       id: 'About',
-      animation: compassAnimation
+      animation: compassAnimation,
+      pic: Pic
     },
     {
       id: 'Projects',
-      animation: potionAnimation
+      animation: potionAnimation,
+      pic: Pic
     },
     {
       id: 'Contact',
-      animation: bottleAnimation
+      animation: bottleAnimation,
+      pic: Pic
     }
   ]
   const [category, setCategory] = useState(animations[2]);
@@ -45,14 +49,14 @@ function App() {
   }
 
   return (
-    <div id='Site' style={{background: `white`}}>
+    <div id='Site'>
       <div id='AnimBGContainer' className={`${animComplete ? 'fuzzed' : 'normal'}`}>
         <div id='AnimBG'>
           <Lottie animationData={category} loop='false' onComplete={fadeBG}/>
         </div>
       </div>
       {cards.map((card, index) => (
-        <Card id={card.id} index={index} bgChange={bgChange}/>
+        <Card id={card.id} index={index} pic={card.pic} bgChange={bgChange}/>
       ))}
       {showContent && <Content pageToDisplay={contents} />}
     </div>
