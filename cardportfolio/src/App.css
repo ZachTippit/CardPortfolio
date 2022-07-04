@@ -1,0 +1,78 @@
+#Site{
+  width: 100%;
+  height: 100%;
+}
+
+#About{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+#Projects{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+#Contact{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+#AnimBGContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 600px;
+  padding: 2rem;
+  margin: auto;
+}
+
+#AnimBG{
+  margin-top: 60%;
+}
+
+.normal{
+
+}
+
+.fuzzed{
+  transition: all 0.5s ease-in-out;
+  filter: blur(1px) grayscale(40%);
+}
+
+#Content{
+  position: absolute;
+  width: 100%;
+  background: rgb(204,204,204);
+  background: radial-gradient(circle, rgba(204,204,204,0.8) 20%, rgba(255,255,255,0) 60%);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+}
+
+#ContentTextContainer{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  bottom: 0;
+  max-width: 300px;
+  margin: auto;
+}
+
+.card{
+  background: white;
+  height: 200px;
+  width: 144px;
+  border: 1px solid black;
+}
