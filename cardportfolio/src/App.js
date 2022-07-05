@@ -1,35 +1,40 @@
 import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import Card from './Components/Card'
-import Content from './Components/Content'
+import About from './Components/About'
+import Projects from './Components/Projects'
+import Contact from './Components/Contact'
+import Title from './Components/Title'
 import Lottie from "lottie-react";
 import compassAnimation from "./Lotties/compass.json";
 import birdAnimation from './Lotties/bird.json'
 import bottleAnimation from './Lotties/bottle.json'
 import potionAnimation from './Lotties/potion.json'
-import {default as Pic} from './blueeyes.jpg'
+import {default as AboutCard} from './Img/AboutCard.png'
+import {default as ProjectsCard} from './Img/ProjectsCard.png'
+import {default as ContactCard} from './Img/ContactCard.png'
+import {default as Pic} from './Img/blueeyes.jpg'
 import './App.css';
 
 function App() {
-  const animations = [compassAnimation, potionAnimation, bottleAnimation];
   const cards = [
     {
       id: 'About',
       animation: compassAnimation,
-      pic: Pic
+      pic: AboutCard
     },
     {
       id: 'Projects',
       animation: potionAnimation,
-      pic: Pic
+      pic: ProjectsCard
     },
     {
       id: 'Contact',
       animation: bottleAnimation,
-      pic: Pic
+      pic: ContactCard
     }
   ]
-  const [category, setCategory] = useState(animations[2]);
+  const [category, setCategory] = useState();
   const [animComplete, setAnimComplete] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [contents, setContents] = useState(10);
@@ -48,6 +53,18 @@ function App() {
     setAnimComplete(true);
   }
 
+  const contentPicker = () => {
+    switch(contents){
+      case 0: 
+        return <About />
+      case 1:
+        return <Projects />
+      case 2:
+        return <Contact />
+        break;
+    }
+  }
+
   return (
     <div id='Site'>
       <div id='AnimBGContainer' className={`${animComplete ? 'fuzzed' : 'normal'}`}>
@@ -56,9 +73,10 @@ function App() {
         </div>
       </div>
       {cards.map((card, index) => (
-        <Card id={card.id} index={index} pic={card.pic} bgChange={bgChange}/>
+        <Card id={card.id} index={index} pic={card.pic} bgChange={bgChange} selected={contents}/>
       ))}
-      {showContent && <Content pageToDisplay={contents} />}
+      <Title />
+      {showContent && contentPicker()}
     </div>
   );
 }
