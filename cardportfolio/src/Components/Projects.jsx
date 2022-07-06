@@ -3,34 +3,78 @@ import { TransitionGroup } from 'react-transition-group'
 import {default as ProjCard} from '../Img/ProjScrollCard.png'
 import {default as ArrowR} from '../Img/ArrowR.png'
 import {default as ArrowL} from '../Img/ArrowL.png'
+import {default as Picodia} from '../Img/Projects/picodia.png'
+import {default as Portfolio1} from '../Img/Projects/portfolio1.png';
+import {default as Portfolio2} from '../Img/Projects/portfolio2.png';
+import {default as PropTerra} from '../Img/Projects/propterra.png';
+import {default as ParPo} from '../Img/Projects/parpo.png';
+import {default as Gabbie} from '../Img/Projects/gabbie.png';
+import {default as Hanscycle} from '../Img/Projects/hanscycle.png';
 import '../carousel.scss';
 
-const Project = ({key, id, level}) => {
+const projects = [
+    {
+        pic: Picodia,
+        link: 'https://picodia.app/'
+    },
+    {
+        pic: Portfolio2,
+        link: 'https://zachtippit.netlify.app/'
+    },
+    {
+        pic: Gabbie,
+        link: 'https://zacharytippit.wixsite.com/gabbie4swcd3'
+    },
+    {
+        pic: PropTerra,
+        link: 'https://www.propterra.io/'
+    },
+    {
+        pic: ParPo,
+        link: 'https://parpo.netlify.app/'
+    },
+    {
+        pic: Portfolio1,
+        link: 'https://zachsoldportfolio.netlify.app/'
+    },
+    {
+        pic: Hanscycle,
+        link: 'https://web1.eng.famu.fsu.edu/me/senior_design/2016/team20/futureplans.html'
+    }
+]
+
+const Project = ({key, level, pic, link}) => {
     const className = 'item level' + level;
     
+    const goIfActive = () => {
+        if(level === 0){
+            window.open(link, '_blank');
+        }
+    }
+
     return(
         <div className={className}
             style={{
-                backgroundImage: `url(${ProjCard})`,
+                backgroundImage: `url(${pic})`,
                 backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
             }}
+            onClick={goIfActive}
             >
-                <p>{key}</p>
         </div>
     )
 }
 
 const Projects = () => {
     const [active, setActive] = useState(0);
-    const [items, setItems] = useState([1,2,3,4,5,6,7,8,9]);
+    const [items, setItems] = useState([0,1,2,3,4,5,6]);
     const [direction, setDirection] = useState()
 
     const generateItems = () => {
         var itemList = []
         var level
-        console.log(items.length)
+        // console.log(items.length)
         for (var i = active - 2; i < active + 3; i++) {
             var index = i
             if (i < 0) {
@@ -39,8 +83,7 @@ const Projects = () => {
                 index = i % items.length
             }
             level = active - i
-            console.log('Level: ', i, active, level, ' Index: ', index);
-            itemList.push(<Project key={index} id={items[index]} level={level} />)
+            itemList.push(<Project key={index} id={items[index]} level={level} pic={projects[index].pic} link={projects[index].link} />)
         }
         return itemList
     }
@@ -62,12 +105,12 @@ const Projects = () => {
     //     console.log(active)
     // }, [active])
     
-    useEffect(() => {
-        console.log(items.length)
-    }, [items])
+    // useEffect(() => {
+    //     console.log(items.length)
+    // }, [items])
 
   return (
-    <div id="carousel" className="noselect">
+    <div id="carousel" className="noselect slide-in-fwd-bottom">
         <div className="arrow arrow-left" onClick={() => moveLeft()}><img className='grow' style={{width: '150%'}} src={ArrowL} /></div>
         <TransitionGroup transitionname={direction}>
             {generateItems()}

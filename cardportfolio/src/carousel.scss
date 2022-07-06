@@ -2,12 +2,16 @@
 
 $default-height: 40%;
 $default-width: 40%;
+$max-width: 400px;
 $level2-height: $default-height - 8%;
 $level2-width: $default-width - 8%;
+$level2-max-width: 300px;
 $level1-height: $default-height - 2%;
 $level1-width: $default-width - 2%;
+$level1-max-width: 350px;
 $level0-height: $default-height + 5%;
 $level0-width: $default-width + 5%;
+$level0-max-width: 400px;
 $level-2-left: 15%;
 $level-1-left: 30%;
 $level0-left: 50%;
@@ -23,15 +27,6 @@ body {
     background-color: #673AB7;
     font-family: 'Nunito';
     overflow: hidden;
-}
-
-.basedOn {
-  text-align: center;
-  font-size: 1.2em;
-  color: #FFF;
-  a, a:visited, a:hover, a:active {
-    color: #FFEB3B;
-  }
 }
 
 #carousel {
@@ -83,6 +78,7 @@ body {
     // box-shadow: $level-2-bs;
     height: $level2-height;
     width: $level2-width;
+    max-width: $level2-max-width;
     line-height: $level2-height;
     // background-color: #228291;
     left: $level-2-left;
@@ -92,6 +88,7 @@ body {
     // box-shadow: $level-1-bs;
     height: $level1-height;
     width: $level1-width;
+    max-width: $level1-max-width;
     line-height: $level1-height;
     // background-color: #6796E5;
     left: $level-1-left;
@@ -101,6 +98,7 @@ body {
     // box-shadow: $level0-bs;
     height: $level0-height;
     width: $level0-width;
+    max-width: $level0-max-width;
     line-height: $level0-height;
     // background-color: #4EC9E1;
     left: $level0-left;
@@ -117,6 +115,7 @@ body {
     // box-shadow: $level1-bs;
     height: $level1-height;
     width: $level1-width;
+    max-width: $level1-max-width;
     line-height: $level1-height;
     // background-color: #6796E5;
     left: $level1-left;
@@ -126,6 +125,7 @@ body {
     // box-shadow: $level2-bs;
     height: $level2-height;
     width: $level2-width;
+    max-width: $level2-max-width;
     line-height: $level2-height;
     // background-color: #228291;
     left: $level2-left;

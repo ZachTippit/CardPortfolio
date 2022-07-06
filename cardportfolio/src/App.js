@@ -15,6 +15,7 @@ import {default as ProjectsCard} from './Img/ProjectsCard.png'
 import {default as ContactCard} from './Img/ContactCard.png'
 import {default as Pic} from './Img/blueeyes.jpg'
 import './App.css';
+import './animations.css';
 
 function App() {
   const cards = [
@@ -34,12 +35,15 @@ function App() {
       pic: ContactCard
     }
   ]
+  
+  const [isIntro, setIsIntro] = useState(true);
   const [category, setCategory] = useState();
   const [animComplete, setAnimComplete] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [contents, setContents] = useState(10);
 
   const bgChange = (animNum) => {
+    setIsIntro(false);
     setAnimComplete(false);
     setShowContent(false);
     setContents(animNum);
@@ -73,9 +77,10 @@ function App() {
         </div>
       </div>
       {cards.map((card, index) => (
-        <Card id={card.id} index={index} pic={card.pic} bgChange={bgChange} selected={contents}/>
+        <Card key={card.id} id={card.id} index={index} pic={card.pic} bgChange={bgChange} selected={contents} isIntro={isIntro}/>
       ))}
       <Title />
+      {isIntro && <div id='IntroPrompt'><h3 id='IntroPromptText' className='bounce'>Pick a card!</h3></div>}
       {showContent && contentPicker()}
     </div>
   );
