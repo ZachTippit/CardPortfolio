@@ -17,8 +17,8 @@ const About = ({pageToDisplay}) => {
                     </div>
                 </Grid>
                 <Grid item xs={12} className='slide-in-fwd-bottom'>
-                    <h3>Hi, I'm Zach</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sed assumenda ipsa voluptate adipisci eaque minima possimus accusantium, dolor officia atque nam deserunt, facere doloremque qui. Voluptatibus quibusdam expedita quam.</p>
+                    <h3 id='AboutTitle'>Hi, I'm Zach</h3>
+                    <p id='AboutText'>World-travelling engineer with a passion for storytelling, efficient operations and creative expression! Throw me at a problem and I will tirelessly pursue it for no other reason than curiosity.<br/><br/>Check out my projects -- let's connect!</p>
                 </Grid>
                 <Grid item xs={6} className='slide-in-fwd-bottom'>
                     <Button variant='contained'>Resume</Button>
