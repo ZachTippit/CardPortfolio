@@ -9,7 +9,6 @@ import Contact from './Components/Contact'
 import Title from './Components/Title'
 import Lottie from "lottie-react";
 import compassAnimation from "./Lotties/compass.json";
-import birdAnimation from './Lotties/bird.json'
 import bottleAnimation from './Lotties/bottle.json'
 import potionAnimation from './Lotties/potion.json'
 import {default as AboutCard} from './Img/AboutCard.png'
