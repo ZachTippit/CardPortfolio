@@ -56,7 +56,7 @@ function App() {
   const fadeBG = () => {
     setTimeout(() => {
       setShowContent(true);
-    }, 2000)
+    }, 1000)
     setAnimComplete(true);
   }
 
@@ -76,7 +76,7 @@ function App() {
     <div id='Site'>
       <div id='AnimBGContainer' className={`${animComplete ? 'fuzzed' : 'normal'}`}>
         <div id='AnimBG'>
-          <Lottie animationData={category} loop='false' onComplete={fadeBG}/>
+          <Lottie animationData={category} loop='false' onComplete={fadeBG} speed={2} />
         </div>
       </div>
       {cards.map((card, index) => (
