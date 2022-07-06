@@ -186,6 +186,14 @@
   color: white;
 }
 
+.noselect {
+  -webkit-user-select: none;
+  -html-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @media only screen and (max-width: 600px) {
 
   #ContentTextContainer{
