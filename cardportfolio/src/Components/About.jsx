@@ -4,6 +4,8 @@ import {default as Me} from '../Img/mthood.png'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Resume from '../zdt-resume.pdf'
+
 import '../animations.css'
 
 const About = ({pageToDisplay}) => {
@@ -21,16 +23,16 @@ const About = ({pageToDisplay}) => {
                     <p id='AboutText'>World-travelling engineer with a passion for storytelling, efficient operations and creative expression! Throw me at a problem and I will tirelessly pursue it for no other reason than curiosity.<br/><br/>Check out my projects -- let's connect!</p>
                 </Grid>
                 <Grid item xs={6} className='slide-in-fwd-bottom'>
-                    <Button variant='contained'>Resume</Button>
+                    <Button variant='contained' size='small' href={Resume} target="_blank">Resume</Button>
                 </Grid>
                 <Grid item xs className='slide-in-fwd-bottom'>
-                    <InstagramIcon fontSize='large' onClick={() => window.open('https://www.instagram.com/zach_tippit/', '_blank')}  />
+                    <InstagramIcon onClick={() => window.open('https://www.instagram.com/zach_tippit/', '_blank')}  />
                 </Grid>
                 <Grid item xs className='slide-in-fwd-bottom'>
-                  <LinkedInIcon fontSize='large' onClick={() => window.open('https://www.linkedin.com/in/zachtippit/', '_blank')}/>
+                  <LinkedInIcon onClick={() => window.open('https://www.linkedin.com/in/zachtippit/', '_blank')}/>
                 </Grid>
                 <Grid item xs className='slide-in-fwd-bottom'>
-                  <GitHubIcon fontSize='large' onClick={() => window.open('https://github.com/ZachTippit', '_blank')}/>
+                  <GitHubIcon onClick={() => window.open('https://github.com/ZachTippit', '_blank')}/>
                 </Grid>
             </Grid>
         </div>
