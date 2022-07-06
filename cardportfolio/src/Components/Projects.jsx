@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { TransitionGroup } from 'react-transition-group'
+import {default as ProjCard} from '../Img/ProjScrollCard.png'
+import {default as ArrowR} from '../Img/ArrowR.png'
+import {default as ArrowL} from '../Img/ArrowL.png'
 import '../carousel.scss';
 
 const Project = ({key, id, level}) => {
@@ -8,8 +11,8 @@ const Project = ({key, id, level}) => {
     return(
         <div className={className}
             style={{
-                backgroundImage: "url(http://lorempixel.com/400/200/)",
-                backgroundSize: "cover",
+                backgroundImage: `url(${ProjCard})`,
+                backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
             }}
@@ -65,11 +68,11 @@ const Projects = () => {
 
   return (
     <div id="carousel" className="noselect">
-        <div className="arrow arrow-left" onClick={() => moveLeft()}><i className="fi-arrow-left"></i>{'<'}</div>
+        <div className="arrow arrow-left" onClick={() => moveLeft()}><img className='grow' style={{width: '150%'}} src={ArrowL} /></div>
         <TransitionGroup transitionname={direction}>
             {generateItems()}
         </TransitionGroup>
-        <div className="arrow arrow-right" onClick={() => moveRight()}><i className="fi-arrow-right"></i>{'>'}</div>
+        <div className="arrow arrow-right" onClick={() => moveRight()}><img className='grow' style={{width: '150%'}} src={ArrowR} /></div>
     </div>
   )
 }

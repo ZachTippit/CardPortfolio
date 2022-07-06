@@ -1,7 +1,7 @@
 @import url( 'https://fonts.googleapis.com/css?family=Nunito');
 
 $default-height: 40%;
-$default-width: 50%;
+$default-width: 40%;
 $level2-height: $default-height - 8%;
 $level2-width: $default-width - 8%;
 $level1-height: $default-height - 2%;
@@ -46,32 +46,26 @@ body {
 
 .arrow {
     position: absolute;
-    width: 60px;
-    height: 20%;
+    width: 40px;
     text-align: center;
-    font-size: 2em;
+    font-size: 1em;
     cursor: pointer;
     z-index: 20;
     top: 50%;
     transform: translate(0, -50%);
-    i {
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      position: absolute;
-    }
     transition: all 500ms;
     &-right {
-        right: 0;
+        right: 1.5rem;
     }
 
     &-left {
-        left: 0;
+        left: 0.5rem;
     }
-  &:hover{
-    background-color: #512DA8;
-    color: #FFEB3B;
-  }
+}
+
+.grow:hover, .grow:active{
+    transform: scale(1.1);
+    transition: 0.5s all ease-in-out
 }
 
 .item {
@@ -86,47 +80,54 @@ body {
 }
 
 .level-2 {
-    box-shadow: $level-2-bs;
+    // box-shadow: $level-2-bs;
     height: $level2-height;
     width: $level2-width;
     line-height: $level2-height;
-    background-color: #228291;
+    // background-color: #228291;
     left: $level-2-left;
 }
 
 .level-1 {
-    box-shadow: $level-1-bs;
+    // box-shadow: $level-1-bs;
     height: $level1-height;
     width: $level1-width;
     line-height: $level1-height;
-    background-color: #6796E5;
+    // background-color: #6796E5;
     left: $level-1-left;
 }
 
 .level0 {
-    box-shadow: $level0-bs;
+    // box-shadow: $level0-bs;
     height: $level0-height;
     width: $level0-width;
     line-height: $level0-height;
-    background-color: #4EC9E1;
+    // background-color: #4EC9E1;
     left: $level0-left;
+    transform-origin: left top;
+}
+
+.level0:hover, .level0:active{
+    height: $level0-height + 8%;
+    width: $level0-width + 8%;
+    transition: 0.5s all ease-in-out;
 }
 
 .level1 {
-    box-shadow: $level1-bs;
+    // box-shadow: $level1-bs;
     height: $level1-height;
     width: $level1-width;
     line-height: $level1-height;
-    background-color: #6796E5;
+    // background-color: #6796E5;
     left: $level1-left;
 }
 
 .level2 {
-    box-shadow: $level2-bs;
+    // box-shadow: $level2-bs;
     height: $level2-height;
     width: $level2-width;
     line-height: $level2-height;
-    background-color: #228291;
+    // background-color: #228291;
     left: $level2-left;
 }
 
