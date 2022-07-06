@@ -90,7 +90,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 15%;
   bottom: 0;
   max-width: 600px;
   padding: 2rem;
@@ -98,7 +98,7 @@
 }
 
 #AnimBG{
-  margin-top: 60%;
+  margin-top: 30%;
 }
 
 .normal{
@@ -128,23 +128,23 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 25%;
+  top: 0;
   bottom: 0;
   max-width: 350px;
   margin: auto;
 }
 
 #AboutTitle{
-  font-size: 1.75rem;
+  font-size: 1rem;
   text-align: center;
 }
 
 #AboutText{
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 #Title{
-  width: 30%;
+  width: 20%;
   position: absolute;
   left: 1rem;
   bottom: 1rem;
@@ -197,6 +197,6 @@
   }
 
   #Title{
-    width: 70%;
+    width: 40%;
   }
 }
