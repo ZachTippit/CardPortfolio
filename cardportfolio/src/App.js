@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import { useEffect, useState } from 'react';
+import useSound from 'use-sound';
+import cardDraw from './card-draw.mp3';
 import Card from './Components/Card'
 import About from './Components/About'
 import Projects from './Components/Projects'
@@ -18,6 +20,7 @@ import './App.css';
 import './animations.css';
 
 function App() {
+  const [play] = useSound(cardDraw);
   const cards = [
     {
       id: 'About',
@@ -43,6 +46,7 @@ function App() {
   const [contents, setContents] = useState(10);
 
   const bgChange = (animNum) => {
+    play();
     setIsIntro(false);
     setAnimComplete(false);
     setShowContent(false);
@@ -77,7 +81,7 @@ function App() {
         </div>
       </div>
       {cards.map((card, index) => (
-        <Card key={card.id} id={card.id} index={index} pic={card.pic} bgChange={bgChange} selected={contents} isIntro={isIntro}/>
+        <Card key={card.id} id={card.id} index={index} pic={card.pic} bgChange={bgChange} selected={contents} isIntro={isIntro} />
       ))}
       <Title />
       {isIntro && <div id='IntroPrompt'><h3 id='IntroPromptText' className='bounce'>Pick a card!</h3></div>}
