@@ -19,7 +19,7 @@ const projects = [
     },
     {
         pic: Portfolio2,
-        link: 'https://zachtippit.netlify.app/'
+        link: 'https://waitbutzach.netlify.app/'
     },
     {
         pic: Gabbie,
