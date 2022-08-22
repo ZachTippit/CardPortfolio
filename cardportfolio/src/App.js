@@ -7,10 +7,10 @@ import About from './Components/About'
 import Projects from './Components/Projects'
 import Contact from './Components/Contact'
 import Title from './Components/Title'
-import Lottie from "lottie-react";
-import compassAnimation from "./Lotties/compass.json";
-import bottleAnimation from './Lotties/bottle.json'
-import potionAnimation from './Lotties/potion.json'
+import { Player } from '@lottiefiles/react-lottie-player';
+import duckAnimation from "./Lotties/duck.json";
+import earthAnimation from './Lotties/earth.json'
+import loadingAnimation from './Lotties/loading.json'
 import {default as AboutCard} from './Img/AboutCard.png'
 import {default as ProjectsCard} from './Img/ProjectsCard.png'
 import {default as ContactCard} from './Img/ContactCard.png'
@@ -23,23 +23,27 @@ function App() {
   const cards = [
     {
       id: 'About',
-      animation: compassAnimation,
-      pic: AboutCard
+      animation: earthAnimation,
+      pic: AboutCard,
+      speed: 3
     },
     {
       id: 'Projects',
-      animation: potionAnimation,
-      pic: ProjectsCard
+      animation: loadingAnimation,
+      pic: ProjectsCard,
+      speed: 5
     },
     {
       id: 'Contact',
-      animation: bottleAnimation,
-      pic: ContactCard
+      animation: duckAnimation,
+      pic: ContactCard,
+      speed: 1
     }
   ]
   
   const [isIntro, setIsIntro] = useState(true);
   const [category, setCategory] = useState();
+  const [speed, setSpeed] = useState(1);
   const [animComplete, setAnimComplete] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [contents, setContents] = useState(10);
@@ -51,14 +55,17 @@ function App() {
     setShowContent(false);
     setContents(animNum);
     setCategory(cards[animNum].animation)
+    setSpeed(cards[animNum].speed)
   }
 
-  const fadeBG = () => {
+  const fadeBG = (event) => {
+    if(event == 'complete') {
     setTimeout(() => {
       setShowContent(true);
     }, 1000)
     setAnimComplete(true);
   }
+}
 
   const contentPicker = () => {
     switch(contents){
@@ -76,7 +83,7 @@ function App() {
     <div id='Site'>
       <div id='AnimBGContainer' className={`${animComplete ? 'fuzzed' : 'normal'}`}>
         <div id='AnimBG'>
-          <Lottie animationData={category} loop='false' onComplete={fadeBG} speed={2} />
+          <Player src={category} autoplay keepLastFrame onEvent={fadeBG} speed={speed}/>
         </div>
       </div>
       {cards.map((card, index) => (
