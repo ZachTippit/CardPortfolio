@@ -23,7 +23,7 @@ const projects = [
     },
     {
         pic: Gabbie,
-        link: 'https://zacharytippit.wixsite.com/gabbie4swcd3'
+        link: 'https://www.gabbiemilch.com/'
     },
     {
         pic: PropTerra,
