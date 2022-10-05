@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button, Grid } from '@mui/material'
 import {default as Me} from '../Img/mthood.png'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -8,7 +7,7 @@ import Resume from '../zdt-resume.pdf'
 
 import '../animations.css'
 
-const About = ({pageToDisplay}) => {
+const About = () => {
   return (
     <div className='Content'>
         <div id='ContentTextContainer'>

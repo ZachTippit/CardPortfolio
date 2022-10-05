@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -11,7 +11,7 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs.sendForm('service_mi6o48a', 'template_u83yxfd', form.current, 'kHCf_xwtzMenQJggX')
-    .then((result) => {
+    .then(() => {
       setIsSuccess(true);
       setSentAlready(true);
     }, (error) => {

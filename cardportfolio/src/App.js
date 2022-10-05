@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import useSound from 'use-sound';
 import cardDraw from './card-draw.mp3';
@@ -14,9 +13,11 @@ import loadingAnimation from './Lotties/loading.json'
 import {default as AboutCard} from './Img/AboutCard.png'
 import {default as ProjectsCard} from './Img/ProjectsCard.png'
 import {default as ContactCard} from './Img/ContactCard.png'
-import {default as Pic} from './Img/blueeyes.jpg'
+import ReactGA from 'react-ga'
 import './App.css';
 import './animations.css';
+
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID)
 
 function App() {
   const [play] = useSound(cardDraw);
@@ -47,6 +48,11 @@ function App() {
   const [animComplete, setAnimComplete] = useState(false);
   const [showContent, setShowContent] = useState(false);
   const [contents, setContents] = useState(10);
+
+  useEffect(() => {
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
+  }, [])
 
   const bgChange = (animNum) => {
     play();

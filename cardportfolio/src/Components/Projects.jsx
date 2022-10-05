@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { TransitionGroup } from 'react-transition-group'
-import {default as ProjCard} from '../Img/ProjScrollCard.png'
 import {default as ArrowR} from '../Img/ArrowR.png'
 import {default as ArrowL} from '../Img/ArrowL.png'
+import {default as Gabbie} from '../Img/Projects/gabbie.png';
+import {default as Hanscycle} from '../Img/Projects/hanscycle.png';
+import {default as Kithara} from '../Img/Projects/kithara.png';
+import {default as ParPo} from '../Img/Projects/parpo.png';
 import {default as Picodia} from '../Img/Projects/picodia.png'
 import {default as Portfolio1} from '../Img/Projects/portfolio1.png';
 import {default as Portfolio2} from '../Img/Projects/portfolio2.png';
 import {default as PropTerra} from '../Img/Projects/propterra.png';
-import {default as ParPo} from '../Img/Projects/parpo.png';
-import {default as Gabbie} from '../Img/Projects/gabbie.png';
-import {default as Hanscycle} from '../Img/Projects/hanscycle.png';
 import '../carousel.scss';
 
 const projects = [
@@ -18,20 +18,25 @@ const projects = [
         link: 'https://picodia.app/'
     },
     {
-        pic: Portfolio2,
-        link: 'https://waitbutzach.netlify.app/'
+        pic: Kithara,
+        link: 'https://www.kithara.dev/'
     },
     {
         pic: Gabbie,
         link: 'https://www.gabbiemilch.com/'
     },
     {
+        pic: ParPo,
+        link: 'https://parpo.netlify.app/'
+    },
+    
+    {
         pic: PropTerra,
         link: 'https://www.propterra.io/'
     },
     {
-        pic: ParPo,
-        link: 'https://parpo.netlify.app/'
+        pic: Portfolio2,
+        link: 'https://waitbutzach.netlify.app/'
     },
     {
         pic: Portfolio1,
