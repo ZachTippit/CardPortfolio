@@ -27,9 +27,8 @@ const projects = [
     },
     {
         pic: ParPo,
-        link: 'https://parpo.netlify.app/'
+        link: 'https://parpo.propterra.io/'
     },
-    
     {
         pic: PropTerra,
         link: 'https://www.propterra.io/'
